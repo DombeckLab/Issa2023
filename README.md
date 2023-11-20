@@ -16,6 +16,15 @@ The following example illustrates the operation of this function. We start with 
 ![fig1](fig1.jpg)
 
 Next we use the following parameters: tau = [.6 .1], max_freq = .002, exp_tau = [240 1200], and lam_est = [1/3 1/3]. The code will generate the following basis functions: a single constant function, 4 sinusoidal functions, and 4 exponential functions, along with the neuropil and estimate of true dF/F0 (F_est), to be described later:
-
 ![fig2](fig2.jpg)
+
+Next, we run the algorithm: [coeff,Bfull,Bhist,spk_est] = findbn(t,y,[.6 .1],neu,.002,[240 1200],true,[1/3 1/3]);
+Bnpil = Bfull(:,end-1)*coeff(end-1); % scaled neuropil
+Bline = Bfull(:,1:end-2)*coeff(1:end-2); % scaled baseline
+F_est = (Bfull(:,end)*coeff(end))./Bline; % F-F0 estimate
+dF = (y-Bnpil-Bline)./Bline; % dF/F0 estimate
+z_norm = spk_est./Bline; % scale the spike estimate
+
+We can then plot the following useful quantities:
+
 
