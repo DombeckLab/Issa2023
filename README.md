@@ -1,4 +1,5 @@
 # FINDBN: an integrated iterative algorithm for decomposition of a fluoresence signal into neuropil, baseline, and estimated (deconvolved) activity
+This algorithm is implemented in MATLAB.
 
 ## Code description
 * findbn.m: Given fluoresence trace y and neuropil signal neu, attempts to recover signals by assuming y = spk_est ∗ h + B * coeff, where h is a kernel defined by time constants tau, B is the basis functions, and coeff is the associated constants. Thus spk_est ∗ h (convolution operation) is the estimate of F(t) and B * coeff (matrix multiplication) is the estimate of the baseline. Algorithm iterates between solving for coeff (using lsqlin) and updating spk_est (using oasisAR2).
