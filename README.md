@@ -7,4 +7,5 @@ For convenience, we have included oasisAR2.m, oasisAR1.m, and thresholded_oasisA
 
 ## Citation
 Please cite/reference Issa et al - Nat Neuro 2023.
+
 If Oasis is used, please cite/reference Friedrich et al - PLOS Comp Bio 2017 and/or Giovannucci et al - eLife 2019.
