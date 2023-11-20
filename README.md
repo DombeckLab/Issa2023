@@ -25,6 +25,6 @@ F_est = (Bfull(:,end)*coeff(end))./Bline; % F-F0 estimate
 dF = (y-Bnpil-Bline)./Bline; % dF/F0 estimate
 z_norm = spk_est./Bline; % scale the spike estimate
 
-We can then plot the following useful quantities:
-
+We can then plot the following useful quantities. This shows dF/F0 calculated by subtracting scaled neuropil and the baseline (constructed from a weighted sum of the basis functions) and divided by baseline, represented by dF. Overlaid is F_est, which is the convolution of the inferred spike probabilities z_norm with the Ca2+ kernel definted by tau.
+![fig3](fig3.jpg)
 
