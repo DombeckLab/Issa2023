@@ -32,3 +32,52 @@ We can then plot the following useful quantities. This plot shows dF/F0 calculat
 
 This plot shows the inferred spike probabilities z_norm (scaled version of spk_est):
 ![fig4](fig4.jpg)
+
+This example can be run using the following code in Matlab, but first download the files and set the path. Each code cell below will generate the plots above in sequence:
+
+~~~
+load('findbn_data.mat')
+
+%% run algorithm
+[coeff,Bfull,Bhist,spk_est] = findbn(t,y,[.6 .1],neu,.002,[240 1200],true,[1/3 1/3]);
+Bnpil = Bfull(:,end-1)*coeff(end-1); % scaled neuropil
+Bline = Bfull(:,1:end-2)*coeff(1:end-2); % scaled baseline
+F_est = (Bfull(:,end)*coeff(end))./Bline; % F-F0 estimate
+dF = (y-Bnpil-Bline)./Bline; % dF/F0 estimate
+z_norm = spk_est./Bline; % scale the spike estimate
+%% plot F and neuropil
+plot(t,y,'k')
+hold on; plot(t,neu); hold off
+ylim([0 16000]); box off
+legend('raw F','neuropil')
+xlabel('time (s)')
+ylabel('fluorescence')
+
+%% plot basis functions
+subplot(2,1,1)
+plot(t,Bfull(:,2:5),'k')
+box off
+title('sinusoidal basis functions')
+
+subplot(2,1,2)
+plot(t,Bfull(:,6:9),'k')
+box off
+xlabel('time (s)')
+title('exponential basis functions')
+
+%% plot dF/F0
+plot(t,dF,'k')
+hold on
+plot(t,F_est)
+hold off
+box off
+xlabel('time (s)')
+ylabel('\DeltaF/F_0')
+legend('\DeltaF/F_0','spk est * h')
+
+%% plot spiking
+plot(t,z_norm,'k')
+box off
+xlabel('time (s)')
+ylabel('pseudo-firing rate')
+~~~
