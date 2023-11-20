@@ -11,5 +11,11 @@ Please cite/reference Issa et al - Nat Neuro 2023.
 
 If Oasis is used, please cite/reference Friedrich et al - PLOS Comp Bio 2017 and/or Giovannucci et al - eLife 2019.
 
+## Example
+The following example illustrates the operation of this function. We start with a dataset as follows: time t, raw fluorescence y, and neuropil neu. These are plotted here: plot(t,y,'k'); hold on; plot(t,neu); hold off
 ![fig1](fig1.jpg)
+
+Next we use the following parameters: tau = [.6 .1], max_freq = .002, exp_tau = [240 1200], and lam_est = [1/3 1/3]. The code will generate the following basis functions: a single constant function, 4 sinusoidal functions, and 4 exponential functions, along with the neuropil and estimate of true dF/F0 (F_est), to be described later:
+
+![fig2](fig2.jpg)
 
