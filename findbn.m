@@ -6,9 +6,10 @@ function [coeff,Bfull,Bhist,spk_est] = findbn(t,y,tau,neu,max_freq,exp_tau,plt,l
 %
 % The full model is y = spk_est*h + B * coeff where h is a kernel defined
 % by time constants tau, B is the basis functions, and coeff is the
-% associated constants. Thus spk_est*h is the estimate of F(t) and B*coeff
-% is the estimate of the baseline. Algorithm iterates between solving for
-% coeff (using lsqlin) and updating spk_est (using oasisAR2).
+% associated constants. Thus spk_est*h (convolution operation) is the
+% estimate of F(t) and B*coeff (matrix multiplication) is the estimate of
+% the baseline. Algorithm iterates between solving for coeff (using lsqlin)
+% and updating spk_est (using oasisAR2).
 %
 % The full set of basis function is a sum of a constant function,
 % sinusoids, exponentials, and a user-provided neuropil signal. The
