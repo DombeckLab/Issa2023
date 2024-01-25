@@ -9,7 +9,7 @@ For convenience, we have included oasisAR2.m, oasisAR1.m, and thresholded_oasisA
 ## Citation
 Please cite/reference Issa et al - Nat Neuro 2024, with complete details available here: https://www.nature.com/articles/s41593-023-01557-4.
 
-If Oasis is used, please cite/reference Friedrich et al - PLOS Comp Bio 2017 and/or Giovannucci et al - eLife 2019.
+If Oasis is used, please cite/reference Friedrich et al - PLOS Comp Bio 2017 (https://doi.org/10.1371/journal.pcbi.1005423) and/or Giovannucci et al - eLife 2019 ( https://doi.org/10.7554/eLife.38173).
 
 ## Example
 The following example illustrates the operation of this function. We start with a dataset as follows: time t, raw fluorescence y, and neuropil neu. These are plotted here: plot(t,y,'k'); hold on; plot(t,neu); hold off
