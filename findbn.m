@@ -53,7 +53,8 @@ function [coeff,Bfull,Bhist,spk_est] = findbn(t,y,tau,neu,max_freq,exp_tau,plt,l
 %   z_norm = spk_est./Bline; % scale the spike estimate
 
 %% Author: John Issa, Northwestern University, 2019 (updated 2023)
-%% References: Issa et.al., Nat Neuro 2023, Lateral entorhinal cortex subpopulations represent experiential epochs surrounding reward
+%% References: Issa et.al., Nat Neuro 2024, Lateral entorhinal cortex subpopulations represent experiential epochs surrounding reward
+%% available at https://www.nature.com/articles/s41593-023-01557-4
 %%%%%% on March 13, 2022, copied oasisAR2 from CaImAn-MATLAB-master to replace oasisAR2 from zhoupc
 
 %% preliminaries
