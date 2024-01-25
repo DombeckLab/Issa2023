@@ -7,7 +7,7 @@ This algorithm is implemented in MATLAB.
 For convenience, we have included oasisAR2.m, oasisAR1.m, and thresholded_oasisAR2.m from https://github.com/flatironinstitute/CaImAn-MATLAB/tree/master/deconvolution/oasis. These files are needed for findbn to run. However, different spike inference methods can be used in place of Oasis if desired by replacing the appropriate code in the est_spk subroutine in findbn.m.
 
 ## Citation
-Please cite/reference Issa et al - Nat Neuro 2023.
+Please cite/reference Issa et al - Nat Neuro 2024, with complete details available here: https://www.nature.com/articles/s41593-023-01557-4.
 
 If Oasis is used, please cite/reference Friedrich et al - PLOS Comp Bio 2017 and/or Giovannucci et al - eLife 2019.
 
